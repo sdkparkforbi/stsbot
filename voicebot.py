@@ -18,7 +18,7 @@ from openai.embeddings_utils import get_embedding
 st.cache_data.clear()  # st.cache를 사용한 경우 st.cache.clear()를 사용하세요
 
 ##### 기본 설정 및 API 초기화 #####
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 MODEL_WHISPER = "whisper-1"
 MODEL_GPT = "gpt-4o-mini-2024-07-18"
 
