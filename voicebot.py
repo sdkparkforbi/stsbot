@@ -65,7 +65,7 @@ def stt(audio):
 # GPT에게 질문
 def ask_gpt(messages):
     headers = {
-        "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}",
+        "Authorization": f"Bearer {st.secrets["OPENAI_API_KEY"]}",
         "Content-Type": "application/json"
     }
 
