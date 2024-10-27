@@ -19,6 +19,7 @@ st.cache_data.clear()  # st.cache를 사용한 경우 st.cache.clear()를 사용
 
 ##### 기본 설정 및 API 초기화 #####
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+api_key = st.secrets["OPENAI_API_KEY"]
 MODEL_WHISPER = "whisper-1"
 MODEL_GPT = "gpt-4o-mini-2024-07-18"
 
@@ -65,7 +66,7 @@ def stt(audio):
 # GPT에게 질문
 def ask_gpt(messages):
     headers = {
-        "Authorization": f"Bearer {st.secrets["OPENAI_API_KEY"]}",
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
 
