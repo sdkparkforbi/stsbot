@@ -119,9 +119,7 @@ def create_prompt(df, query):
     result = return_answer_candidate(df, query)
     
     # 시스템 메시지에 유사한 상위 3개의 문서 내용을 포함
-    system_role = f"""You are an artificial intelligence language model named "정채기" that specializes in summarizing \
-    and answering documents about Seoul's youth policy, developed by developers 사용자1 and 사용자2.
-    You need to take a given document and return a very detailed summary of the document in the query language.
+    system_role = f"""You are an expert on northern Gyeonggi cities. You can answer questions based on news.
     Here are the document: 
             doc 1 :""" + str(result.iloc[0]['text']) + """
             doc 2 :""" + str(result.iloc[1]['text']) + """
@@ -161,7 +159,7 @@ def init_session_state():
 
 def main():
 
-    st.image('./images/ddc.jpg')
+    st.image('./images/images.png')
 
     init_session_state()
 
